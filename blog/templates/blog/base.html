@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	 crossorigin="anonymous">
+	<link rel="stylesheet" href="{% static 'blog/style.css' %}" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+	<link rel="icon" href="{% static 'favicon.ico' %}"/>
+	<title>DIGITIMES - Ferramentas essenciais para negócios online</title>
+	<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://digitimes.com.br/">
+<meta property="og:title" content="DT | DIGITIMES - Ferramentas essenciais para negócios online">
+<meta property="og:description" content="Marketing Digital para quem tem pressa!
+Blogs, tutoriais e ferramentas para marketing digital e negócios online">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://digitimes.com.br/">
+<meta property="twitter:title" content="DT | DIGITIMES - Ferramentas essenciais para negócios online">
+<meta property="twitter:description" content="Marketing Digital para quem tem pressa!
+Blogs, tutoriais e ferramentas para marketing digital e negócios online">
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="container-fluid offset-md-1">
+		<a class="navbar-brand" href="{% url 'home' %}">DIGITIMES</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07" aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExample07">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'blog:' %}">Blog e Tutoriais <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'affiliate' %}">Canais de venda e publicidade<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'apis:search_key' %}">Palavra-chave<span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'apis:whatsapp' %}">Botão Whatsapp <i class="bx bxl-whatsapp"> </i><span class="sr-only"></span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+<body>
+	<main> 
+
+
+	
+    
+     {%block content %} {% endblock content %} 
+     
+     
+     
+ <div class="footer-basic">
+       <section class="footers bg-light pt-5 pb-3">
+   <div class="container pt-6">
+       <div class="row">
+           <div class="col-xs-12 col-sm-6 col-md-4 footers-one">
+    		    <div class="footers-logo">
+    		        <h5>Sobre nós</h5>
+    		    </div>
+    		    <div class="footers-info mt-6">
+    		        <p>DIGITIMES é um site gratuito de recursos de Marketing e Negócios Online. A DIGITIMES foi fundada em 2021. O principal objetivo deste site é fornecer tutoriais, dicas, cursos, ferramentas e outros recursos de qualidade que permitam a qualquer pessoa trabalhar online e dominar o marketing digital com base em estudos de caso reais e pesquisas aprofundadas.</p>
+    		    </div>
+    		     
+    		</div>
+    	   <div class="col-xs-12 col-sm-6 col-md-4 footers-two">
+    		    <h5>Nossos sites </h5>
+    		    <ul class="list-unstyled">
+    			 <li><a href="{% url 'blog:' %}">Blog e tutoriais</a></li>
+           </ul>
+    		</div>
+    	   <div class="col-xs-12 col-sm-6 col-md-2 footers-three">
+    		    <h5>Nossos links </h5>
+    		    <ul class="list-unstyled">
+    			 <li><a href="{% url 'policy' %}">Política de Privacidade</a></li>
+    			 <li><a href="{% url 'policy' %}">Termos e Condições</a></li>
+    			 <!-- <li><a href="about.html">mapa do site</a></li> -->
+    			 <li><a href="{% url 'policy' %}">Política de Cookies</a></li>
+    			 <li><a href="{% url 'policy' %}"></a></li>
+    			</ul>
+    		</div>
+
+       </div>
+   </div>
+</section>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0158TN4LLS"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0158TN4LLS');
+</script>
+
+
+
+</body>
+
+</html>

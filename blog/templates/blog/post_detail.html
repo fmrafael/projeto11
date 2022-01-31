@@ -1,0 +1,47 @@
+{% extends "blog/base.html" %} {% block title %} {{post.title}} {% endblock %} {% block content %}
+<div class="main-content">
+	<div class="container">
+
+<article>
+
+			<div class="col-md-10">
+				<h1 class="section-heading">{{post.title}}</h1>
+				<img class="card-img-top" src="{{ post.photo_title.url }}" alt="{{post.title}}">
+
+<h2> {{post.subheading1}} </h2>
+                      
+                        <p> {{post.body1|linebreaks}} </p>
+                        <h2 class="section-heading">{{post.subheading2}}</h2>
+                        {% if post.photo_body1 %}
+                        <img class="card-img-top" src="{{ post.photo_body1.url }}" alt="">
+                        {% else %}
+                        {% endif %}
+                        
+                        
+                        <p>{{post.body2|linebreaks}}</p>
+                        <blockquote class="blockquote"></blockquote>
+                         
+                        <h2 class="section-heading">{{post.subheading3}}</h2>
+                         {% if post.photo_body2 %}
+                        <img class="card-img-top" src="{{ post.photo_body2.url }}" alt="">
+                         {% else %}
+                        {% endif %}
+                        <p>{{post.body3|linebreaks}}</p>
+                        
+                        <span class="caption text-muted"></span>
+                        
+                         
+                       
+                        <p class="section-heading">{{post.conclusion|linebreaks }}</p>
+                        
+                          <h4>- Publicado em: {{post.created}} -</h4>
+                          <h4>Links adicionais:</h4><a href= "{{post.post_links.url}}">
+                          <h5>{{post.post_links}}</h5> </a>
+                            
+                        </p>
+                    </div>
+            
+        </article>
+</div></div>
+
+{% endblock %}

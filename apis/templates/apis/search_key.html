@@ -1,0 +1,111 @@
+{% extends "blog/base.html" %} {% load crispy_forms_tags %} 
+{% load static %}
+
+{% block title%} {% endblock %} {% block content %}
+
+<div class="main-content">
+	<div class="container">
+
+<h1> Buscador de palavras e frases para SEO </h1>
+			<h3 class="font-weight-light"> A escolha das palavras-chave certas é fundamental para SEO. Utilize o buscador grátis e ilimitado
+        de palavras-chave</h3>
+
+
+<div class="container">
+
+	<div class="row">
+
+    <p class="fs-7 col-md-10">Insira qualquer palavra ou frase e veja as top 10 keywords mais populares </p>
+	</div>
+
+	<div class="row">
+
+    <div class="col-sm-6">
+
+     <div class="card">
+        <div class="card-body">
+    		<div class="col-md-12">
+          			<h2>Gerador de palavras-chave</h2>
+			<form method="post">
+				{% csrf_token %} {{ form | crispy}}
+				<br>
+        <button type="submit" class="btn btn-primary btn-block"  value="Submit">Gerar </button><p class="text-muted"> Não guardamos nenhum dado informado</p>
+</form>
+
+</div>
+      </div>
+      </div></div>
+         <div class="col-sm-6">
+<div class="card">
+        <div class="card-body">
+      
+   
+        <h2>Top 10 palavras relacionadas</h2>
+
+        {% for search_key in response %}
+      
+        <ul class="list-group list-group-flush">
+       <li class="list-group-item"></li>
+           
+                 
+
+   <ul class="list-group list-group-flush">
+     
+     <li class="list-group-item">{{search_key}}</li>
+     
+    
+      
+  {% endfor %} 
+        
+      </div>
+   
+ </div>
+ </div> 
+ 
+ </div>
+
+</div>
+
+<hr class="col-2 col-md-4 mb-3">
+
+<article class="mb-4">
+	<div class="container">
+		<div class="row gx-4 gx-lg-5 justify-content-center">
+			<div class="col-md-10">
+				<h1 class="section-heading">{{post.title}}</h1>
+				<img class="card-img-top" src="{{ post.photo_title.url }}" alt="{{post.title}}">
+
+<h2> {{post.subheading1}} </h2>
+                      
+                        <p> {{post.body1|linebreaks}} </p>
+                        <h2 class="section-heading">{{post.subheading2}}</h2>
+                        <img class="card-img-top" src="{{ post.photo_body1.image_url|default_if_none:'' }}" alt="">
+                        
+                        
+                        <p>{{post.body2|linebreaks}}</p>
+                        <blockquote class="blockquote"></blockquote>
+                         
+                        <h2 class="section-heading">{{post.subheading3}}</h2>
+                        <img class="card-img-top" src="{{ post.photo_body2.image_url.url|default_if_none:'' }}" alt="">
+                        <p>{{post.body3|linebreaks}}</p>
+                        
+                        <span class="caption text-muted"></span>
+                         <img class="card-img-top" src="{{ post.photo_body3.image_url.url|default_if_none:'' }}" alt="">
+                        <p class="section-heading">{{post.conclusion|linebreaks }}</p>
+                        
+                          <h4>- Publicado em: {{post.created}} -</h4>
+                          <h4>Quer saber mais? Confira nosso 
+                          <a href="{% url 'blog:' %}"<h5>Blog </h5> </a>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+      </div>
+    </div>
+
+<script src="{% static 'apis.js' %}"></script>
+{% endblock %}
+
+

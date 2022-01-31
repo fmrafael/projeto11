@@ -1,0 +1,30 @@
+{% extends "blog/base.html" %} {% block title %} Digitimes - Blog com Ferramentas para marketing digital para alavancar as finanças de quem tem pressa para ganhar dinheiro!  {% endblock %} {% block content %}
+<div class="main-content">
+	<div class="container">
+	<h1> Digitimes Blog</h1>
+			<h3 class="font-weight-light"> O melhor conteúdo para negócios online</h3>
+
+<article id="article">
+<div class="container">  
+ <div class="row">
+     	{% for post in post_list %}
+		<div class="col-sm-6">
+			<div class="card">
+				<a href="{{post.get_absolute_url}}">
+					<img class="card-img-top" src="{{ post.photo_title.url }}" alt="{{post.title}}">
+      <div class="card-body">
+          <h1 class="card-title">{{post.title}}</h1>
+            </a>
+          <p class="card-text">
+            {{post.body1 | truncatewords:35}}</p>
+          <small>{{post.created}}</small> | <i class="bx bx-pointer bx-xs"></i>
+      </div>
+      
+    </div>
+  </div>
+  {% endfor %}
+  </div>
+</div>
+</article>
+</div></div>
+{% endblock %}

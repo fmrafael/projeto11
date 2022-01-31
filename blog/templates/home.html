@@ -1,0 +1,161 @@
+{% extends "blog/base.html" %} {% block content %}
+<div class="row">
+
+<div class="container-fluid offset-md-1 col-8">
+
+<h1> Marketing digital para quem tem pressa!</h1>
+<h3 class="font-weight-light"> Ferramentas essenciais para negócios online</h3>
+ 
+<div class="row">
+<div class="col-md-4">
+    <div class="card p-3 mb-2">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex flex-row align-items-center">
+                <div class="icon"> <i class="bx bxl-blogger"></i> </div>
+            <div class="ms-2 c-details">
+                <h6 class="mb-0"> Conhecimento</h6> 
+            </div>
+        </div>
+        <div class="badge"> <span>Blog</span> </div>
+    </div>
+    <div class="mt-5">
+       <a href="{% url 'blog:' %}"><h3 class="heading"><br>Blogs e Tutoriais sobre negócios online</h3></a>
+        <div class="mt-5">
+            <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="mt-3"> <span class="text2"><i class="bx bx-like"></i>580<span class="text2"></span></span> </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-3 mb-2">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row align-items-center">
+            <div class="icon"> <i class="bx bxl-google"></i> </div>
+            <div class="ms-2 c-details">
+                <h6 class="mb-0">Planejador de Palavras-chave grátis</h6> 
+            </div>
+        </div>
+        <div class="badge"> <span>SEO</span> </div>
+    </div>
+    <div class="mt-5">
+      <a href="{% url 'apis:search_key' %}">
+        <h3 class="heading">Encontre as palavras-chave mais buscadas no google para otimizar seu SEO   <br></h3></a>
+        <div class="mt-5">
+            <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="mt-3"> <span class="text2"><i class="bx bx-like">853</i></span> </div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-3 mb-2">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row align-items-center">
+            <div class="icon"> <i class="bx bxl-instagram-alt"></i> </div>
+            <div class="ms-2 c-details">
+                <h6 class="mb-0"> Influensearch grátis </h6> 
+            </div>
+        </div>
+        <div class="badge"> <span>Marketing</span> </div>
+    </div>
+    <div class="mt-5">
+        <h3 class="heading">Pesquisador de Influenciadores <br>Digitais (em breve)</h3>
+        <div class="mt-5">
+            <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="mt-3"> <span class="text2"><i class="bx bx-like"></i></span> </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-3 mb-2">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row align-items-center">
+            <div class="icon"> <i class="bx bx-table"></i> </div>
+            <div class="ms-2 c-details">
+                <h6 class="mb-0"> Divulgadores de conteúdo, publicidade e canais de vendas</h6> 
+            </div>
+        </div>
+        <div class="badge"> <span>Marketing</span> </div>
+    </div>
+    <div class="mt-5"><a href="{% url 'affiliate' %}">
+        <h3 class="heading">Comparativo de Marketing de afiliados, native ads e Marketplaces </h3></a>
+        <div class="mt-5">
+            <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="mt-3"> <span class="text2"><i class="bx bx-like"></i>120</span> </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-3 mb-2">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row align-items-center">
+            <div class="icon"> <i class="bx bxl-whatsapp"></i> </div>
+            <div class="ms-2 c-details">
+                <h6 class="mb-0"> Gerador de botão Whatsapp</h6> 
+            </div>
+        </div>
+        <div class="badge"> <span>Marketing</span> </div>
+    </div>
+    <div class="mt-5">
+      <a href="{% url 'apis:whatsapp' %}">
+        <h3 class="heading">Gerador de botão Whatsapp</h3></a>
+        <div class="mt-5">
+            <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="mt-3"> <span class="text2"><i class="bx bx-like"></i></span> </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+<div class="col-md-4">
+<div class="card p-3 mb-2">
+    <div class="d-flex justify-content-between">
+        <div class="d-flex flex-row align-items-center">
+            <div class="icon"> <i class="bx bx-file"></i> </div>
+            <div class="ms-2 c-details">
+                <h6 class="mb-0">Gerador de Documentos grátis</h6> 
+            </div>
+        </div>
+        <div class="badge"> <span>Jurídico</span> </div>
+    </div>
+    <div class="mt-5">
+      <h3 class="heading">Gerador de Políticas  <br>Privacidade, LGPD, Cookies, Termos e Condições e outros (em breve)</h3>
+        <div class="mt-5">
+            <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 100%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="mt-3"> <span class="text2"><i class="bx bx-like"></i></span> </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+{% block sidebar %}
+{% include "blog/sidebar.html" %}
+{% endblock %}
+</div>
+
+</main>
+
+
+{% endblock  %}  

@@ -1,0 +1,124 @@
+{% extends "blog/base.html" %} {% block title %}Programa de Afiliados ativos em 2021/2022 {% endblock %} 
+
+{% block content %}
+
+<div class="main-content">
+	<div class="container mt-7">
+		<h1>Canais de venda e publicidade digital em 2022</h1>
+    <h3 class="font-weight-light">Pesquise por marketplaces, programas de afiliados e native ads</h3>
+    <hr>
+		<table id="table_id" class="display">
+			<thead>
+				<tr>
+					<th scope="col"></th>
+					<th scope="col">Empresa</th>
+					<th scope="col">Comissão</th>
+					<th scope="col">Categoria</th>
+					<th scope="col">Site do programa</th>
+				</tr>
+			</thead>
+			<tbody>
+
+				{% for affiliate in get_affiliate %}
+				<tr>
+					<th scope="row">
+						<a href="{{affiliate.website_affiliate}}" class="avatar rounded-circle mr-0">
+							<img src="{{affiliate.photo_affiliate.url}}">
+                        </a>
+      </th>
+      <td>{{affiliate.name_affiliate}}</td>
+      <td>  {{affiliate.commission_affiliate}}</td>
+      <td> {{affiliate.category_affiliate}}</td>               
+       <td> <a href="{{affiliate.website_affiliate}}"><span class="badge badge-dot mr-0">{{affiliate.website_affiliate}}</span></a></td>
+    </tr>
+    
+    {% endfor %}
+    
+  </tbody>
+</table>
+    
+<br>
+
+
+	</div>
+  </div>
+
+  <div>
+
+ 
+
+    </div>
+
+   <article class="mb-4">
+	<div class="container">
+		<div class="row gx-4 gx-lg-5 justify-content-center">
+			<div class="col-md-10">
+				<h1 class="section-heading">Marketing de Afiliados [Explicado]: {{post.title}}</h1>
+				<img class="card-img-top" src="{{ post.photo_title.url }}" alt="{{post.title}}">
+
+<h2> {{post.subheading1}} </h2>
+                      
+                        <p> {{post.body1|linebreaks}} </p>
+                        <h2 class="section-heading">{{post.subheading2}}</h2>
+                        <img class="card-img-top" src="{{ post.photo_body1.image_url|default_if_none:'' }}" alt="">
+                        
+                        
+                        <p>{{post.body2|linebreaks}}</p>
+                        <blockquote class="blockquote"></blockquote>
+                         
+                        <h2 class="section-heading">{{post.subheading3}}</h2>
+                        <img class="card-img-top" src="{{ post.photo_body2.image_url.url|default_if_none:'' }}" alt="">
+                        <p>{{post.body3|linebreaks}}</p>
+                        
+                        <span class="caption text-muted"></span>
+                         <img class="card-img-top" src="{{ post.photo_body3.image_url.url|default_if_none:'' }}" alt="">
+                        <p class="section-heading">{{post.conclusion|linebreaks }}</p>
+                        
+                          <h4>- Publicado em: {{post.created}} -</h4>
+                          <h4>Quer saber mais? Confira nosso 
+                          <a href="{% url 'blog:' %}"<h5>Blog </h5> </a>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.js"></script>
+
+
+
+<script> 
+
+$(document).ready( function () {
+    $('#table_id').DataTable();
+} );
+
+$('#table_id').DataTable( {
+
+    language: {
+        search: "Pesquisar:",
+        lengthMenu: "Exibir _MENU_ resultados por página",
+        info: "_START_ até _END_ de _TOTAL_ registros",
+        paginate: {
+            first:      "Primeiro",
+            previous:   "Anterior",
+            next:       "Próximo",
+            last:       "Último"
+        },
+    }
+} );
+
+</script>
+
+{% endblock %}

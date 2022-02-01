@@ -8,10 +8,10 @@ https://docs.djangoproject.com/en/4.0/howto/deployment/wsgi/
 """
 
 import os
-#import cx_Oracle
+import cx_Oracle
 
 
-cx_Oracle.init_oracle_client(lib_dir=os.getenv('LD_LIBRARY_PATH'))
+#cx_Oracle.init_oracle_client(lib_dir=os.getenv('LD_LIBRARY_PATH'))
 
 from django.core.wsgi import get_wsgi_application
 

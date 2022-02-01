@@ -28,9 +28,7 @@ path('admin', admin.site.urls),
     path('policy', policy_view, name='policy'),
     path("blog/affiliate", affiliate_view, name="affiliate"),
     path("", include("apis.urls", namespace="apis")),
-    path(
-        "robots.txt",
-        TemplateView.as_view(template_name="robots.txt", content_type="text/plain"),
-    ),
+    path("robots.txt",TemplateView.as_view(template_name="robots.txt", content_type="text/plain")
+    )
 
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

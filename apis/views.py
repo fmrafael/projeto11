@@ -71,8 +71,8 @@ class SeoView(TemplateView):
     post = Post.objects.get(pk=4)
     form = SeoForm(request.POST)
     if form.is_valid():
-      #seo_url = "https://"f"{form.cleaned_data['seo_url']}"
       seo_url = form.cleaned_data['seo_url']
+      seo_url = f"https://{seo_url}"
       os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\rafae\instabot\digitimes-1643719520339-4d1f6d8086d1.json"
       service = build('pagespeedonline', 'v5')
       

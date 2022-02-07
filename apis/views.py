@@ -1,10 +1,11 @@
 from django.shortcuts import render
 from django.views.generic import TemplateView
-from .forms import SearchKeyForm, WhatsappForm
+from .forms import SearchKeyForm, WhatsappForm, SeoForm
 import requests
 from blog.models import Post
 from django.http import HttpResponseRedirect
-
+import os 
+from googleapiclient.discovery import build
 
 class SearchKeyView(TemplateView):
   
@@ -56,4 +57,41 @@ class WhatsappView(TemplateView):
      whats_url = f'https://api.whatsapp.com/send?phone=+55{whatsapp}'
      whats_link = f'<i class="bx bxl-whatsapp bx-lg" style= "color:#25D366;"</i> https://api.whatsapp.com/send?phone=+55{whatsapp} <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>'
      return render(request, self.template_name, {'whats_link':whats_link, 'whats_url':whats_url, 'post':post})
+
+class SeoView(TemplateView):
+  
+  template_name = 'apis/seocheckup.html'
+  
+  def get(self, request):
+    post = Post.objects.get(pk=4)
+    form = SeoForm()
+    return render(request, self.template_name, {'form':form, 'post':post})
+
+  def post(self, request):
+    post = Post.objects.get(pk=4)
+    form = SeoForm(request.POST)
+    if form.is_valid():
+      #seo_url = "https://"f"{form.cleaned_data['seo_url']}"
+      seo_url = form.cleaned_data['seo_url']
+      os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\rafae\instabot\digitimes-1643719520339-4d1f6d8086d1.json"
+      service = build('pagespeedonline', 'v5')
+      
+      category=['ACCESSIBILITY', 'BEST_PRACTICES', 'PERFORMANCE', 'PWA', 'SEO']
+      
+      try:
+        collection = service.pagespeedapi()
+        response = collection.runpagespeed(url=seo_url, category=category).execute()
+        data = response["lighthouseResult"]["categories"]
+        datax = {}
+        scores_desc=['Performance', 'Acessibilidade', 'Melhores práticas', 'SEO', 'PWA']
+        for key,value in  data.items():
+          datax1 = {key:round(value["score"]*100)}
+          datax.update(datax1)
+        
+        
+        return render(request, self.template_name, { 'form':form,'datax':datax,'post':post, 'scores_desc':scores_desc  })
+        
+
+      except Exception:
+        return HttpResponseRedirect(self.request.path_info)
   

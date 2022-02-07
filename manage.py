@@ -2,9 +2,9 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-import cx_Oracle
+#import cx_Oracle
 
-cx_Oracle.init_oracle_client(lib_dir=os.getenv('LD_LIBRARY_PATH'))
+#cx_Oracle.init_oracle_client(lib_dir=os.getenv('LD_LIBRARY_PATH'))
 #cx_Oracle.init_oracle_client(lib_dir=r'C:\Users\rafae\instantclient_21_3')
 
 def main():
@@ -23,3 +23,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

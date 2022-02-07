@@ -1,6 +1,8 @@
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import sys
+import cx_Oracle
 
 load_dotenv()
 
@@ -134,3 +136,15 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'images')
 MEDIA_URL = ''
+
+
+if 'test' in sys.argv:
+    DATABASES['default'] = {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase'
+    }
+
+
+
+
+cx_Oracle.init_oracle_client(lib_dir=r'C:\Users\rafae\instantclient_21_3')

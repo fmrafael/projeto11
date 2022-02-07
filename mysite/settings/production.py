@@ -1,4 +1,5 @@
 from mysite.settings.settings import *
+import cx_Oracle
 
 DEBUG = False
 
@@ -16,4 +17,9 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL  = '/static/'
+
+
+
+cx_Oracle.init_oracle_client(lib_dir=os.getenv('LD_LIBRARY_PATH'))
+
 

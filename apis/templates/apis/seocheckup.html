@@ -1,0 +1,122 @@
+{% extends "blog/base.html" %} {% load crispy_forms_tags %} 
+{% load static %}
+
+{% block title%} Checklist para SEO e Performance do Site. Ferramenta para medir a performance do site{% endblock %} {% block content %}
+
+<div class="main-content">
+	<div class="container">
+
+<h1> Teste e checklist de SEO e Performance </h1>
+			<h3 class="font-weight-light">Checkup de SEO | Medir a velocidade do site e a adequação ao SEO é o primeiro passo para aumentar o engajamento dos usuários no site. </h3>
+
+
+<div class="container">
+
+	<div class="row">
+
+    <p class="fs-7 col-md-10">Digite o url do seu site e receba o checkup de SEO com dicas e instruções detalhadas do score e pontos de melhoria. Totalmente grátis. </p>
+	</div>
+
+	<div class="row">
+
+    <div class="col-sm-6">
+
+     <div class="card">
+        <div class="card-body">
+    		<div class="col-md-12">
+          			<h2>Checkup de SEO e performance</h2>
+			<form method="post">
+				{% csrf_token %} {{ form | crispy}}
+				<br>
+        <button type="submit" class="btn btn-primary btn-block"  value="Submit">Gerar </button><p class="text-muted">  (Aguarde um pouco, a consulta pode levar alguns instantes...)</p><p class="text-muted">Powered by Google PageSpeed API</p>
+</form>
+
+</div>
+      </div>
+      </div></div>
+      
+      
+      <div class="col-sm-6">
+<div class="card">
+        <div class="card-body">
+      
+   
+        <h2>Score e resultado</h2>
+        <h6> Notas entre 0 a 100</h6>
+        <div class="container"><div class="row">
+          <div class="col-sm">  
+            
+      <ul class="list-group list-group-flush">
+        {% for i in scores_desc %}
+        
+       <li class="list-group-item d-flex justify-content-between align-items-center">{{i}}
+        </li>{% endfor %}</ul>
+      </div>
+        
+      <div class="col-sm">
+        <ul class="list-group list-group-flush">
+        {% for key, value in datax.items %}
+        <li class="list-group-item d-flex justify-content-between align-items-center"><span class="font-weight-bold">{{value}}
+        </span></li>{% endfor %}</ul>
+
+      </div>
+
+
+
+</div>
+</div>
+        
+   
+ 
+      </div>
+   
+ </div>
+ </div> 
+ 
+ </div>
+
+</div>
+
+<hr class="col-2 col-md-4 mb-3">
+
+<article class="mb-4">
+	<div class="container">
+		<div class="row gx-4 gx-lg-5 justify-content-center">
+			<div class="col-md-10">
+				<h1 class="section-heading">{{post.title}}</h1>
+				<img class="card-img-top" src="{{ post.photo_title.url }}" alt="{{post.title}}">
+
+<h2> {{post.subheading1}} </h2>
+                      
+                        <p> {{post.body1|linebreaks}} </p>
+                        <h2 class="section-heading">{{post.subheading2}}</h2>
+                        <img class="card-img-top" src="{{ post.photo_body1.image_url|default_if_none:'' }}" alt="">
+                        
+                        
+                        <p>{{post.body2|linebreaks}}</p>
+                        <blockquote class="blockquote"></blockquote>
+                         
+                        <h2 class="section-heading">{{post.subheading3}}</h2>
+                        <img class="card-img-top" src="{{ post.photo_body2.image_url.url|default_if_none:'' }}" alt="">
+                        <p>{{post.body3|linebreaks}}</p>
+                        
+                        <span class="caption text-muted"></span>
+                         <img class="card-img-top" src="{{ post.photo_body3.image_url.url|default_if_none:'' }}" alt="">
+                        <p class="section-heading">{{post.conclusion|linebreaks }}</p>
+                        
+                          <h4>- Publicado em: {{post.created}} -</h4>
+                          <h4>Quer saber mais? Confira nosso 
+                          <a href="{% url 'blog:' %}"<h5>Blog </h5> </a>
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </article>
+      </div>
+    </div>
+
+<script src="{% static 'apis.js' %}"></script>
+{% endblock %}
+
+

@@ -75,7 +75,7 @@ class SeoView(TemplateView):
       seo_url = f"https://{seo_url}"
       ##em dev, tirar #
       #os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\rafae\instabot\digitimes-1643719520339-4d1f6d8086d1.json"
-      os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+      os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/home/fmrafael/projeto10/keys.json"
       service = build('pagespeedonline', 'v5')
       
       category=['ACCESSIBILITY', 'BEST_PRACTICES', 'PERFORMANCE', 'PWA', 'SEO']

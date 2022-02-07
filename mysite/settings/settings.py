@@ -147,4 +147,4 @@ if 'test' in sys.argv:
 
 
 
-cx_Oracle.init_oracle_client(lib_dir=r'C:\Users\rafae\instantclient_21_3')
+#cx_Oracle.init_oracle_client(lib_dir=r'C:\Users\rafae\instantclient_21_3')

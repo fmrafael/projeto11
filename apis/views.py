@@ -63,12 +63,12 @@ class SeoView(TemplateView):
   template_name = 'apis/seocheckup.html'
   
   def get(self, request):
-    post = Post.objects.get(pk=4)
+    post = Post.objects.get(pk=61)
     form = SeoForm()
     return render(request, self.template_name, {'form':form, 'post':post})
 
   def post(self, request):
-    post = Post.objects.get(pk=4)
+    post = Post.objects.get(pk=61)
     form = SeoForm(request.POST)
     if form.is_valid():
       seo_url = form.cleaned_data['seo_url']

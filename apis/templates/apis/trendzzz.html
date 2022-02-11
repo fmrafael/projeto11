@@ -1,77 +1,38 @@
 {% extends "blog/base.html" %} {% load crispy_forms_tags %} 
 {% load static %}
 
-{% block title%} Checklist para SEO e Performance do Site. Ferramenta para medir a performance do site{% endblock %} {% block content %}
+{% block title%} Monitoramento dos trending topics é fundamental para se destacar nos seus Posts. {% endblock %} {% block content %}
 
 <div class="main-content">
 	<div class="container">
 
-<h1> Teste e checklist de SEO e Performance </h1>
-			<h3 class="font-weight-light">Checkup de SEO | Medir a velocidade do site e a adequação ao SEO é o primeiro passo para aumentar o engajamento dos usuários no site. </h3>
+<h1> Trending Topics </h1>
+			<h3 class="font-weight-light">API conectada live com o Google</h3>
 
 
 <div class="container">
 
 	<div class="row">
 
-    <p class="fs-7 col-md-10">Digite o url do seu site e receba o checkup de SEO com dicas e instruções detalhadas do score e pontos de melhoria. Totalmente grátis. </p>
+    <p class="fs-7 col-md-10">Acompanhe por aqui os últimos trending topics antes de publicar qualquer Post/Stories nas redes sociais </p>
 	</div>
 
 	<div class="row">
 
-    <div class="col-sm-6">
+    <div class="col-sm-12">
 
      <div class="card">
         <div class="card-body">
     		<div class="col-md-12">
-          			<h2>Checkup de SEO e performance</h2>
-			<form method="post">
-				{% csrf_token %} {{ form | crispy}}
-				<br>
-        <button type="submit" class="btn btn-primary btn-block"  value="Submit">Gerar </button><p class="text-muted">  (Aguarde um pouco, a consulta pode levar alguns instantes...)</p><p class="text-muted">Powered by Google PageSpeed API</p>
-</form>
-
+          			<h2>Trendzzz | Trending Topics API</h2>
+		
+                      <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2790_RC04/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderWidget("dailytrends", "", {"geo":"BR","guestPath":"https://trends.google.com:443/trends/embed/"}); </script>
 </div>
       </div>
       </div></div>
       
       
-      <div class="col-sm-6">
-<div class="card">
-        <div class="card-body">
-      
-   
-        <h2>Score e resultado</h2>
-        <h6> Notas entre 0 a 100</h6>
-        <div class="container"><div class="row">
-          <div class="col-sm">  
-            
-      <ul class="list-group list-group-flush">
-        {% for i in scores_desc %}
-        
-       <li class="list-group-item d-flex justify-content-between align-items-center">{{i}}
-        </li>{% endfor %}</ul>
-      </div>
-        
-      <div class="col-sm">
-        <ul class="list-group list-group-flush">
-        {% for key, value in datax.items %}
-        <li class="list-group-item d-flex justify-content-between align-items-center"><span class="font-weight-bold">{{value}}
-        </span></li>{% endfor %}</ul>
-
-      </div>
-
-
-
-</div>
-</div>
-        
-   
- 
-      </div>
-   
- </div>
- </div> 
+     
  
  </div>
 
@@ -116,7 +77,7 @@
       </div>
     </div>
 
-
+    
 {% endblock %}
 
 

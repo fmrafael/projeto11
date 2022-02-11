@@ -100,7 +100,7 @@ class SeoView(TemplateView):
 class TrendzzzView(TemplateView):
   template_name = 'apis/trendzzz.html'
   def get(self, request):
-    post = Post.objects.get(pk=61)
+    post = Post.objects.get(pk=82)
     return render(request, self.template_name, {'post':post})
 
   
